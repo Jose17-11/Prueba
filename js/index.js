@@ -22,11 +22,7 @@ function cargaImagenes (){
     imgAve.src = '../assets/pajarito.png'
 }
 
-let color=document.querySelector("#fondo1");
-color.addEventListener("click", ()=>
-    {
-        canvas.style.backgroundColor='red';
-    })
+
 
 //Funcion que entra al doumento html para detectar click sobre el html
 document.addEventListener('keydown', function(evento){
@@ -254,5 +250,4 @@ function principal() {
     dibujaRex();
     puntuacion();
     mejorPuntaje();
-    color();
 }

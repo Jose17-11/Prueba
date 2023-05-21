@@ -72,9 +72,19 @@ h2{
     /* background: linear-gradient(360deg, rgb(199, 0, 0) 0%, rgb(255, 179, 2) 35%, rgb(255, 255, 255)100%);     */
     /* Fondo infernal */
     /* background: linear-gradient(180deg, rgb(199, 0, 0) 10%, rgb(255, 179, 2) 40%, rgb(255, 255, 255)100%); */   
+    
     border: 2px solid #000000;
 }
-
+/* 
+#canvas:target{
+    background-color: #000;
+}
+#canvas2:target{
+    background-color: #00f;
+}
+#canvas3:target{
+    background-color: #0f0;
+} */
 /** Se le dio estilos al contenedor con la clase instrucciones para acomodarlas en la pagina */
 .instrucciones{
     background: linear-gradient(360deg, rgb(21, 5, 92) 100%, rgb(34, 40, 112)100%);

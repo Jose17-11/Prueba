@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Se conectaron los dos archivos de estilos y de funciones al HTML  -->
     <link rel="stylesheet" href="./style/style.css">
-    <script src="./js/index.js"></script>
     <!-- Se le puso un titulo a la pestaña de la pagina web -->
     <title>Dinosaurio god</title>
     <!-- Se le puso un icono a la pestaña de la pagina para un mejor estilo -->
@@ -22,15 +21,15 @@
         </div>
         <div class="container-img">
             <button type="submit" id="fondo1">
-                <a href="#area-de-juego"><img src="./assets/fondo1.png" alt=""> </a>
+                <a id="fondo9" href="#canvas"><img src="./assets/fondo1.png" alt=""> </a>
             </button>
     
             <button type="submit" id="fondo2">
-                <a href="#area-de-juego"><img src="./assets/fondo2.png" alt=""> </a>
+                <a id="fondo8" href="#area-de-juego"><img src="./assets/fondo2.png" alt=""> </a>
             </button>
     
             <button type="submit" id="fondo3">
-                <a href="#area-de-juego"><img src="./assets/fondo3.png" alt=""> </a>
+                <a id="fondo7" href="#area-de-juego"><img src="./assets/fondo3.png" alt=""> </a>
             </button>
         </div>    
     </section>
@@ -42,6 +41,21 @@
             <canvas id="canvas" class="canvas-container" >
             </canvas>
         </div>
+        <script>
+            let fondo1 = document.getElementById('fondo1');
+            let fondo2 = document.getElementById('fondo2');
+            let fondo3 = document.getElementById('fondo3');
+            let canva = document.getElementById('canvas');
+            fondo1.addEventListener('click', function() {
+                canva.style.backgroundColor = 'red';
+            });
+            fondo2.addEventListener('click', function() {
+                canva.style.backgroundColor = 'green';
+            });
+            fondo3.addEventListener('click', function() {
+                canva.style.backgroundColor = 'blue';
+            });
+        </script>
         <!-- Contenedor estatico que muestra las instrucciones de como jugar Dino good -->
         <div class="instrucciones">        
             <ol>
@@ -52,4 +66,5 @@
         </div>
     </section>
 </body>
+<script src="./js/index.js"></script>
 </html>
