@@ -20,17 +20,13 @@
             <h1>Selecciona el fondo en el que desees jugar</h1>
         </div>
         <div class="container-img">
-            <button type="submit" id="fondo1">
-                <a id="fondo9" href="#canvas"><img src="./assets/fondo1.png" alt=""> </a>
-            </button>
-    
-            <button type="submit" id="fondo2">
-                <a id="fondo8" href="#area-de-juego"><img src="./assets/fondo2.png" alt=""> </a>
-            </button>
-    
-            <button type="submit" id="fondo3">
-                <a id="fondo7" href="#area-de-juego"><img src="./assets/fondo3.png" alt=""> </a>
-            </button>
+            
+            <a id="fondo9" href="#canvas"><img src="./assets/fondo1.png" alt=""> </a>
+            
+            <a id="fondo8" href="#area-de-juego"><img src="./assets/fondo2.png" alt=""> </a>
+            
+            <a id="fondo7" href="#area-de-juego"><img src="./assets/fondo3.png" alt=""> </a>
+            
         </div>    
     </section>
     <section class="principal" id="area-de-juego">
@@ -42,19 +38,6 @@
             </canvas>
         </div>
         <script>
-            let fondo1 = document.getElementById('fondo1');
-            let fondo2 = document.getElementById('fondo2');
-            let fondo3 = document.getElementById('fondo3');
-            let canva = document.getElementById('canvas');
-            fondo1.addEventListener('click', function() {
-                canva.style.backgroundColor = 'red';
-            });
-            fondo2.addEventListener('click', function() {
-                canva.style.backgroundColor = 'green';
-            });
-            fondo3.addEventListener('click', function() {
-                canva.style.backgroundColor = 'blue';
-            });
         </script>
         <!-- Contenedor estatico que muestra las instrucciones de como jugar Dino good -->
         <div class="instrucciones">        

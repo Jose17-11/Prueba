@@ -1,3 +1,16 @@
+let fondo1 = document.getElementById('fondo9');
+let fondo2 = document.getElementById('fondo8');
+let fondo3 = document.getElementById('fondo7');
+let canva = document.getElementById('canvas');
+fondo1.addEventListener('click', function() {
+    canva.style.background = 'linear-gradient(360deg, rgb(199, 0, 0) 0%, rgb(255, 179, 2) 35%, rgb(255, 255, 255)100%)';
+});
+fondo2.addEventListener('click', function() {
+    canva.style.background = 'linear-gradient(180deg, rgb(199, 0, 0) 10%, rgb(255, 179, 2) 40%, rgb(255, 255, 255) 100%)';
+});
+fondo3.addEventListener('click', function() {
+    canva.style.background = 'linear-gradient(360deg, rgb(0, 53, 199) 35%, rgb(2, 255, 255) 45%, rgb(255, 255, 255)25%)';
+});
 
 //Se crearon las variables de ancho, alto, el canvas y el contexto del juego
 let ancho = '700';
