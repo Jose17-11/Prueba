@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Se conectaron los dos archivos de estilos y de funciones al HTML  -->
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/index.js"></script>
+    <!-- Se le puso un titulo a la pestaña de la pagina web -->
+    <title>Dinosaurio god</title>
+    <!-- Se le puso un icono a la pestaña de la pagina para un mejor estilo -->
+    <link rel="icon" type="img.png" href="assets/rex.png" />
+</head>
+<!-- Tenemos el cuerpo de la pagina con la funcion inicializa() que conecta el canvas y da el contexto
+    acerca de las animaciones 2d
+-->
+<body onload="inicializa()">
+    <section class="menu">
+        <div>
+            <h1>Selecciona el fondo en el que desees jugar</h1>
+        </div>
+        <div class="container-img">
+            <button type="submit" id="fondo1">
+                <a href="#area-de-juego"><img src="./assets/fondo1.png" alt=""> </a>
+            </button>
+    
+            <button type="submit" id="fondo2">
+                <a href="#area-de-juego"><img src="./assets/fondo2.png" alt=""> </a>
+            </button>
+    
+            <button type="submit" id="fondo3">
+                <a href="#area-de-juego"><img src="./assets/fondo3.png" alt=""> </a>
+            </button>
+        </div>    
+    </section>
+    <section class="principal" id="area-de-juego">
+        <!-- Container que tiene dentro el titulo principal y como hermano el canvas -->
+        <audio src="./assets/audio_fondo.mp3" autoplay loop preload="auto" volume="20"></audio>
+        <div class="container" >
+            <h2>Dino-good</h2>
+            <canvas id="canvas" class="canvas-container" >
+            </canvas>
+        </div>
+        <!-- Contenedor estatico que muestra las instrucciones de como jugar Dino good -->
+        <div class="instrucciones">        
+            <ol>
+                <li>Enter: Reinciciar juego</li>
+                <li>Espacio: Brincar</li>
+                <li>Ctrl + R: Recargar la pagina</li>
+            </ol>
+        </div>
+    </section>
+</body>
+</html>
