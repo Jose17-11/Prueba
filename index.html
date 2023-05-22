@@ -1,53 +1,80 @@
 <!DOCTYPE html>
+<!-- El atributo "lang" es para que segmente el sitio con los demas sitios en el lenguaje especificado-->
 <html lang="es">
 <head>
+    <!-- Etiqueta para que hacepte todo tipo de caracteres -->
     <meta charset="UTF-8">
+    <!-- Etiqueta para que pueda ser compatible con el navegador edge -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Etiqueta que ayuda a mejorar el modo responsivo (adaptable a dispositivos moviles) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Se conectaron los dos archivos de estilos y de funciones al HTML  -->
+    <!-- Se conectaron los el archivo ccs y permita agregar estilos desde ese archivo-->
     <link rel="stylesheet" href="./style/style.css">
     <!-- Se le puso un titulo a la pestaña de la pagina web -->
     <title>Dinosaurio god</title>
-    <!-- Se le puso un icono a la pestaña de la pagina para un mejor estilo -->
+    <!-- Se le puso un icono a la pestaña de la pagina para un mejor estilo visual-->
     <link rel="icon" type="img.png" href="assets/rex.png" />
 </head>
-<!-- Tenemos el cuerpo de la pagina con la funcion inicializa() que conecta el canvas y da el contexto
-    acerca de las animaciones 2d
+<!-- Tenemos el cuerpo de la pagina con la funcion inicializa() que conecta el canvas y da 
+    el contexto acerca de las animaciones 2d
 -->
 <body onload="inicializa()">
+    <!-- Seccion, contenedor que contiene el titulo y las imagenes de fondo para el canvas -->
     <section class="menu">
-        <div>
+        <div class="title">
             <h1>Selecciona el fondo en el que desees jugar</h1>
         </div>
         <div class="container-img">
             
-            <a id="fondo9" href="#canvas"><img src="./assets/fondo1.png" alt=""> </a>
+            <a id="fondo9" href="#canvas">
+                <img src="./assets/fondo1.png" alt=""> 
+            </a>
             
-            <a id="fondo8" href="#area-de-juego"><img src="./assets/fondo2.png" alt=""> </a>
+            <a id="fondo8" href="#area-de-juego">
+                <img src="./assets/fondo2.png" alt="">
+            </a>
             
-            <a id="fondo7" href="#area-de-juego"><img src="./assets/fondo3.png" alt=""> </a>
+            <a id="fondo7" href="#area-de-juego">
+                <img src="./assets/fondo3.png" alt="">
+            </a>
             
         </div>    
     </section>
+    <!-- Seccion que contiene principalmente el canvas y sus instrucciones -->
     <section class="principal" id="area-de-juego">
         <!-- Container que tiene dentro el titulo principal y como hermano el canvas -->
-        <audio src="./assets/audio_fondo.mp3" autoplay loop preload="auto" volume="20"></audio>
+        <!-- <audio src="./assets/audio_fondo.mp3" autoplay loop preload="auto" volume="20"></audio> -->
         <div class="container" >
             <h2>Dino-good</h2>
+            <button id="reiniciar">REINICIAR</button>
             <canvas id="canvas" class="canvas-container" >
             </canvas>
         </div>
         <script>
         </script>
-        <!-- Contenedor estatico que muestra las instrucciones de como jugar Dino good -->
+        <!-- Contenedor estatico que muestra las instrucciones de como jugar Dino good 
+            desd una pc 
+        -->
         <div class="instrucciones">        
-            <ol>
+            <!-- Etiqueta de lista desordenada -->
+            <ol class="lista" >
                 <li>Enter: Reinciciar juego</li>
                 <li>Espacio: Brincar</li>
                 <li>Ctrl + R: Recargar la pagina</li>
             </ol>
         </div>
     </section>
+    <footer class="pie-de-pagina">
+        <p>Propiedad intelectual del equipo 2</p>
+    </footer>
 </body>
+<!-- Script que conecta con el archivo js que da funcionalidad al juego -->
 <script src="./js/index.js"></script>
 </html>
+<!-- 
+    .row:   container-img
+    .colum: <a>
+    .colum-img: <img>
+
+    5:10
+ -->

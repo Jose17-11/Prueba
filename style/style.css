@@ -1,35 +1,75 @@
-/**Estilo universal para agregar el mismo estilo a toda la pagina web*/
+/**Estilo universal para agregar el mismo estilo a todos los elementos de la pagina web*/
 *{
     margin: 0;
 }
 /*********************************************************************************************/
-h1{
+/* Clase title que da estilos al contenedor de la etiqueta h1 */
+.title{
     background-color: #000;
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.3rem;
     padding: 30px;
     text-align: center;
 }
-
+/* pseudoclase que da estilos al titulo una vez que pasemos el cursor sobre la etiqueta h1 */
+h1:hover{
+    display: inline;
+    border: 2px solid rgb(237, 237, 237);
+    background-color: rgba(34, 36, 47, 0.486);
+    border-radius: 10px;
+    padding: 2px 10px;
+    margin: 10px auto;
+}
+/* Estilos al contenedor de las 3 imagenes que tenemos */
 .container-img{
-    background-color: #fff;
-    padding-top: 10px;
+    background-color: #777777;
     width: 100%;
     height: 550px;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-around;
 }
-
+/* Estilos que ordenan a la etiqueta a que es la que nos direcciona hacia donde se encuentra
+    el canvas
+*/
+a{
+    background-color: #00000032;
+    width: 320px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+}
+/* Estilos basicos para el canvas */
 img{
-    width: 350px;
-    height: 250px;
-    border: 2px solid #000;
-    margin: 50px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #444;
+}
+/* Se le dio un estilo que agrande el tamaño de la imagen y el borde de la misma cuando pasemos
+    el cursor sobre la imagen
+*/
+img:hover{
+    width: 340px;
+    height: 240px;
+    border: 3px solid #000;
+}
+/* Seccion de media querys que nos permiten hacer el diseño adaptable a dispositivos moviles */
+@media (max-width: 800px){
+    .container-img{
+        /* flex-wrap nos permite que conforme el ancho de la pantalla sea menor 
+        recorra las imagenes para abajo de forma responsiva o adaptable a la pantalla*/
+        flex-wrap: wrap;
+        height: 800px;
+    }
+    /* Se redujo el tamaño de la etiqueta a que contiene individualmente a las imagenes */
+    a{
+        width: 250px;
+        height: 170px;
+    }
+    
 }
 /*********************************************************************************************/
-/** Se centro y dio estilo al titulo de la pagina */
+/** Se centro y dio al titulo del videojuego*/
 h2{
     text-align: center;
     font-size: 4rem;
@@ -46,8 +86,8 @@ h2{
     background-position: center;
 }
 
-/**Contenedor mayor que tendra intoriormente el canvas para poder darle estilos y centrarlo 
-    utilizando display grid para poder colocar ordenadamente el titulo y el canvas en 2 filas*/
+/**Contenedor mayor que tendra interiormente el canvas para poder darle estilos y centrarlo 
+    utilizando display flex para poder colocar ordenadamente el titulo y el canvas en 2 filas*/
 .container{
     width: 100%;
     height: 100%;
@@ -56,30 +96,82 @@ h2{
     align-items: center;
     justify-content: center;
 }
-
-/**Estilos del canva*/
+/* El boton que se creo para pantallas moviles de inicio se esconde con la propiedad z-index: -1; */
+#reiniciar{
+    z-index: -1;
+}
+/**Estilos del canvas*/
 .canvas-container{
-    /*Fondo en la playa*/
-    /*background: linear-gradient(360deg, rgb(0, 53, 199) 35%, rgb(2, 255, 255) 45%, rgb(255, 255, 255)25%);*/
-    /*Fondo desertico*/
-    /* background: linear-gradient(360deg, rgb(199, 0, 0) 0%, rgb(255, 179, 2) 35%, rgb(255, 255, 255)100%);     */
-    /* Fondo infernal */
-    /* background: linear-gradient(180deg, rgb(199, 0, 0) 10%, rgb(255, 179, 2) 40%, rgb(255, 255, 255)100%); */   
-    
-    border: 2px solid #000000;
+    border: 2px solid #ffffff;
+    animation: snakeAnimation  2s linear infinite;  
 }
-/* 
-#canvas:target{
-    background-color: #000;
+/* Animacion que genra colores al rededor del canvas como serpiente */
+@keyframes snakeAnimation {
+     0% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  10% {
+    box-shadow: 7px 0 0 0 rgba(255, 0, 0);
+  }
+  20% {
+    box-shadow: 4px 7px 0 0 #1100ff;
+  }
+  30% {
+    box-shadow: 0 7px 0 0 rgba(255, 0, 0);
+  }
+  40% {
+    box-shadow: -7px 7px 0 0 #1100ff;
+  }
+  50% {
+    box-shadow: -7px 0 0 0 rgba(255, 0, 0);
+  }
+  60% {
+    box-shadow: -7px -7px 0 0 #1100ff;
+  }
+  70% {
+    box-shadow: 0 -7px 0 0 rgba(255, 0, 0);
+  }
+  80% {
+    box-shadow: 5px -5px 0 0 #1100ff;
+  }
+  90% {
+    box-shadow: 5px 0 0 0 rgba(255, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  }
+/* Media querys que adaptan la parte del juego o del vanvas a dispositivos moviles en cada tamaño */
+@media(max-width: 800px){
+    /* Este es un boton que aparece una vez que la pantalla es del tamaño de tablet o celular */
+    #reiniciar{
+        font-size: 1rem;
+        color: #fff;
+        z-index: 1;
+        padding: 5px;
+        background-color: rgba(0, 0, 0, 0.486);
+        border: 2px solid #fff;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+    /* Se reduce el tamaño del canvas */
+    .canvas-container{
+        width: 450px;
+    }
 }
-#canvas2:target{
-    background-color: #00f;
+
+@media(max-width: 550px){
+    /* Se vuelve a reducir el tamaño del canvas cuando es un dispositivo movil */
+    .canvas-container{
+        width: 300px;
+    }
 }
-#canvas3:target{
-    background-color: #0f0;
-} */
-/** Se le dio estilos al contenedor con la clase instrucciones para acomodarlas en la pagina */
+/* Se le dio un espacioado de 50px al contenedor de la lista */
 .instrucciones{
+    padding-bottom: 50px;
+}
+/** Se le dio estilos al a la lista de instrucciones*/
+.lista{
     background: linear-gradient(360deg, rgb(21, 5, 92) 100%, rgb(34, 40, 112)100%);
     color: #ffffff;
     width: 250px;
@@ -89,8 +181,41 @@ h2{
     border: 2px solid #000;
     border-radius: 10px;
 }
-/** Se le asigno un margen a la lista de instrucciones para darle mejor estetica*/
-ol{
+/* A ca inciso de la lista se le dio un margen para que pueda ser mas legible */
+li{
     margin-top: 10px;
 }
 
+/* Este media query hace que cuando la pantalla sea del tamaño de una tablet o PC mini
+    las instrucciones se adapten al tamaño de la pantalla
+*/
+@media(max-width: 800px){
+    .lista{
+        margin-left: 150px;
+    }
+}
+
+/* Este media query hace que cuando la pantalla tenga hasta un maximo de 550 px elimine las
+    instrucciones ya que ya no seria pc seria un dispositivo movil
+*/
+@media(max-width: 550px){
+    .lista{
+        background: transparent;
+        color: transparent;
+        border: transparent;
+    }
+}
+/*********************************************************************************************/
+
+/* Estilos a la etiqueta footer que bien es el pie de pagina */
+.pie-de-pagina{
+    width: 100%;
+    height: 75px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}

@@ -2,6 +2,7 @@ let fondo1 = document.getElementById('fondo9');
 let fondo2 = document.getElementById('fondo8');
 let fondo3 = document.getElementById('fondo7');
 let canva = document.getElementById('canvas');
+let reiniciar = document.getElementById('reiniciar');
 fondo1.addEventListener('click', function() {
     canva.style.background = 'linear-gradient(360deg, rgb(199, 0, 0) 0%, rgb(255, 179, 2) 35%, rgb(255, 255, 255)100%)';
 });
@@ -12,6 +13,16 @@ fondo3.addEventListener('click', function() {
     canva.style.background = 'linear-gradient(360deg, rgb(0, 53, 199) 35%, rgb(2, 255, 255) 45%, rgb(255, 255, 255)25%)';
 });
 
+reiniciar.addEventListener('click', function() {
+    nivel.velocidad = 9;
+    nube.velocidad = 1;
+    ave.velocidad = 6;
+    ave.x = ancho;
+    cactus.x = ancho;
+    nube.x = ancho;
+    nivel.marcador = 0;
+    nivel.muerto = false;    
+});
 //Se crearon las variables de ancho, alto, el canvas y el contexto del juego
 let ancho = '700';
 let alto = '300';
@@ -57,7 +68,13 @@ document.addEventListener('keydown', function(evento){
         nivel.muerto = false;
     }
 });
-
+//Funcion que permite que cuando el usuario de click sobre la pantalla pueda saltar
+//Lo que lo hace funcionable en pantallas moviles
+document.addEventListener('click', function(event) {
+    if(nivel.muerto == false){
+        saltar();
+    }
+  });
 function inicializa(){
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
